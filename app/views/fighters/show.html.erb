@@ -1,12 +1,13 @@
 <div class="container">
-  <ul>
-    <li><%= @fighter.name %></li>
-    <li><%= "health #{@fighter.health}" %></li>
-    <li><%= "attack points #{@fighter.attack}" %></li>
-  </ul>
+  <div>
+    <h1>Fight with <%= @fighter.name %> ??</h1>
+    <div class="show-fighter">
+      <%= render "show", fighter: @fighter %>
+    </div>
+  </div>
 
   <%= link_to "Custom this fighter", edit_fighter_path(@fighter) %>
 
+
   <%= link_to "Back to list", fighters_path  %>
 </div>
-

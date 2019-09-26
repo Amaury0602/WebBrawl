@@ -1,0 +1,10 @@
+<div class="fighter-card" >
+  <div class="name">
+    <p><%= link_to fighter.name, fighter_path(fighter)  %></p>
+  </div>
+  <div class="stats">
+   <p><%= "HP: #{fighter.health}" %></p>
+   <p><%= "ATTK: #{fighter.attack}" %></p>
+  </div>
+  <p class="select-fighter" data-fighter="<%= fighter.id %>" >PICK HIM</p>
+</div>

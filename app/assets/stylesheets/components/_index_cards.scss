@@ -1,0 +1,25 @@
+.index-content {
+  display: flex;
+  .fighter-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 60%;
+    .fighter-card {
+      display: flex;
+      flex-direction: column;
+      border: 0.7px solid;
+      margin-bottom: 2px;
+      height: 200px;
+      .name {
+        height: 25%;
+        border-bottom: 1px solid;
+      }
+
+      .active {
+        background-color: red;
+      }
+    }
+  }
+}
+
