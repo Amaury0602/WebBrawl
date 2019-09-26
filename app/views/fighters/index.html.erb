@@ -15,6 +15,20 @@
       <%= link_to "Create your own fighter", new_fighter_path %>
       <%= link_to "Start a battle !!", battles_path, method: :post  %>
     </div>
+
+    <div class="create-battle">
+      <%= form_for @battle do |f| %>
+        <%= f.hidden_field :your_fighter_id, input_html: {
+          value: '',
+          id: "your-fighter"
+        } %>
+        <%= f.hidden_field :enemy_fighter_id, input_html: {
+          value: 'qefq',
+          id: "enemy-fighter"
+        } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -22,8 +36,3 @@
 
 
 
-<%= simple_form_for @battle do |f| %>
-  <% f.input :enemy_fighter_id, :as => :hidden, :input_html => { :value => "some value", class: "hello" } %>
-  <% f.input :your_fighter_id, :as => :hidden, :input_html => { :value => "some value" } %>
-  <%= f.button :submit %>
-<% end %>

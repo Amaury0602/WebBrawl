@@ -2,16 +2,22 @@ class BattlesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def show
-
+    @battle = Battle.find(params[:id])
   end
 
   def create
-    raise
-    @battle = Battle.new
-    # if @battle.save
-    # redirect
+    if battle_params
+      @battle = Battle.create(battle_params)
+      @battle.winner_id = @battle.your_fighter_id # THIS NEEDS TO CHANGE
+      if @battle.save
+        redirect_to battle_path(@battle)
+      else
+        redirect_to fighters_path
+      end
+    else
+      redirect_to fighters_path
+    end
   end
-
 
   def battle_params
     params.require(:battle).permit(:enemy_fighter_id, :your_fighter_id, :winner_id)
