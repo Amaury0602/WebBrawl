@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_131751) do
+ActiveRecord::Schema.define(version: 2019_09_26_135043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "battles", force: :cascade do |t|
+    t.bigint "your_fighter_id"
+    t.bigint "enemy_fighter_id"
+    t.bigint "winner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enemy_fighter_id"], name: "index_battles_on_enemy_fighter_id"
+    t.index ["winner_id"], name: "index_battles_on_winner_id"
+    t.index ["your_fighter_id"], name: "index_battles_on_your_fighter_id"
+  end
+
+  create_table "fighters", force: :cascade do |t|
+    t.string "name"
+    t.integer "health"
+    t.integer "attack"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +46,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_131751) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "battles", "fighters", column: "enemy_fighter_id"
+  add_foreign_key "battles", "fighters", column: "winner_id"
+  add_foreign_key "battles", "fighters", column: "your_fighter_id"
 end
