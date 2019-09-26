@@ -1,0 +1,8 @@
+<div class="container">
+  <% @fighters.each do |fighter| %>
+    <%= link_to fighter.name, fighter_path(fighter)  %>
+  <% end %>
+
+
+  <%= link_to "Create your own fighter", new_fighter_path %>
+</div>
