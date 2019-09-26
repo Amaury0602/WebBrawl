@@ -5,6 +5,8 @@
     <li><%= "attack points #{@fighter.attack}" %></li>
   </ul>
 
+  <%= link_to "Custom this fighter", edit_fighter_path(@fighter) %>
+
   <%= link_to "Back to list", fighters_path  %>
 </div>
 

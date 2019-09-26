@@ -23,9 +23,17 @@ class FightersController < ApplicationController
   end
 
   def edit
+    @fighter = Fighter.find(params[:id])
   end
 
   def update
+    @fighter = Fighter.find(params[:id])
+    @fighter.update(fighter_params)
+    if @fighter.save
+      redirect_to fighter_path(@fighter)
+    else
+      render :edit
+    end
   end
 
   def destroy
