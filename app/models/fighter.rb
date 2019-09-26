@@ -16,6 +16,7 @@ class Fighter < ApplicationRecord
   def max_health_and_attack
     if (attack + health) > 11
       errors.add(:attack, " + health points must be below 12 !")
+      errors.add(:health, " + health points must be below 12 !")
     else
       return true
     end
