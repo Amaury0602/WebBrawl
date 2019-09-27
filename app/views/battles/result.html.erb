@@ -1,1 +1,10 @@
-<%= @battle.winner.name %>
+<div class="container">
+  <div class="result-card">
+    <div class="title">
+     <h1><%= @battle.winner.name %> won the fight !</h2>
+    </div>
+    <div class="fight-details">
+      <p>He defeated <%= @battle.loser.name %></p>
+    </div>
+  </div>
+</div>
