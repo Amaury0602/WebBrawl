@@ -24,7 +24,6 @@ class BattlesController < ApplicationController
   end
 
   def update
-    raise
     @battle = Battle.find(params[:id])
     if params["battle"]["winner_id"]
       @battle.winner_id = params["battle"]["winner_id"]
