@@ -7,7 +7,13 @@
       <%= render "show", fighter: @battle.enemy_fighter %>
     </div>
   </div>
-  <div class="infos">
-    <p>Press "G" to attack !</p>
+  <div class="result">
+    <%= form_for @battle do |f| %>
+      <%= f.hidden_field :winner_id, input_html: {
+        value: '',
+        id: "winner"
+      } %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>

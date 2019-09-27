@@ -24,9 +24,14 @@ export function battleAttack() {
         }
         setTimeout(randomAttacks, Math.random()*1500);
       } else {
-        const result = you.health === 0 ? ".... ;'(" : "Yaaaaaaaay"
-        alert(result)
+        selectWinner();
+        // const result = you.health === 0 ? ".... ;'(" : "Yaaaaaaaay"
+        // alert(result)
       }
+    }
+
+    function selectWinner() {
+      alert("helllooooooo winnneneeerrr")
     }
 
     randomAttacks()

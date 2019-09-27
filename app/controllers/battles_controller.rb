@@ -19,6 +19,9 @@ class BattlesController < ApplicationController
     end
   end
 
+  def update
+  end
+
   def battle_params
     params.require(:battle).permit(:enemy_fighter_id, :your_fighter_id, :winner_id)
   end
