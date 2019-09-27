@@ -8,7 +8,12 @@
     width: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 1px solid;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    .fight-icon {
+      width: 30px;
+      height: 30px;
+    }
   }
 }

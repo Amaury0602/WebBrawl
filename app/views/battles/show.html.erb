@@ -3,14 +3,18 @@
     <div class="fighter">
       <%= @battle.your_fighter.name %>
       <div class="stats">
+        <%= image_tag "heart.PNG", class: "fight-icon" %>
         <%= @battle.your_fighter.health %>
+        <%= image_tag "sword.PNG", class: "fight-icon" %>
         <%= @battle.your_fighter.attack %>
       </div>
     </div>
     <div class="fighter">
       <%= @battle.enemy_fighter.name %>
       <div class="stats">
+        <%= image_tag "heart.PNG", class: "fight-icon" %>
         <%= @battle.enemy_fighter.health %>
+        <%= image_tag "sword.PNG", class: "fight-icon" %>
         <%= @battle.enemy_fighter.attack %>
       </div>
     </div>
