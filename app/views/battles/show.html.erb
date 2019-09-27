@@ -1,22 +1,13 @@
 <div class="container">
   <div class="battleground">
-    <div class="fighter">
-      <%= @battle.your_fighter.name %>
-      <div class="stats">
-        <%= image_tag "heart.PNG", class: "fight-icon" %>
-        <%= @battle.your_fighter.health %>
-        <%= image_tag "sword.PNG", class: "fight-icon" %>
-        <%= @battle.your_fighter.attack %>
-      </div>
+    <div class="fighter" id="your-fighter">
+      <%= render "show", fighter: @battle.your_fighter %>
     </div>
-    <div class="fighter">
-      <%= @battle.enemy_fighter.name %>
-      <div class="stats">
-        <%= image_tag "heart.PNG", class: "fight-icon" %>
-        <%= @battle.enemy_fighter.health %>
-        <%= image_tag "sword.PNG", class: "fight-icon" %>
-        <%= @battle.enemy_fighter.attack %>
-      </div>
+    <div class="fighter" id="enemy-fighter">
+      <%= render "show", fighter: @battle.enemy_fighter %>
     </div>
+  </div>
+  <div class="infos">
+    <p>Press "G" to attack !</p>
   </div>
 </div>

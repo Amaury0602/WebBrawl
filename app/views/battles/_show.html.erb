@@ -1,0 +1,13 @@
+<div class="name">
+  <%= fighter.name %>
+</div>
+<div class="stats">
+  <div class="health" data-health="<%= fighter.id %>">
+    <%= image_tag "heart.PNG", class: "heart-icon" %>
+    <%= fighter.health %>
+  </div>
+  <div class="attack" data-attack="<%= fighter.id %>">
+    <%= image_tag "sword.PNG", class: "sword-icon" %>
+    <%= fighter.attack %>
+  </div>
+</div>

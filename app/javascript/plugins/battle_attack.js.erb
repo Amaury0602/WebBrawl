@@ -1,0 +1,34 @@
+export function battleAttack() {
+  const yourFighter = document.querySelector("#your-fighter")
+  if (yourFighter) {
+    const you = {
+      health: yourFighter.children[1].children[0].innerText,
+      attack: yourFighter.children[1].children[1].innerText
+    }
+
+    const enemyFighter = document.querySelector("#enemy-fighter")
+    const enemy = {
+      health: enemyFighter.children[1].children[0].innerText,
+      attack: enemyFighter.children[1].children[1].innerText
+    }
+
+    function randomAttacks() {
+      let randomFighter = Math.round(Math.random())
+      if (you.health > 0 && enemy.health > 0) {
+        if (randomFighter === 0) {
+          enemy.health -= you.attack
+          enemyFighter.children[1].children[0].innerText -= you.attack
+        } else if (randomFighter === 1) {
+          you.health -= enemy.attack
+          yourFighter.children[1].children[0].innerText -= enemy.attack
+        }
+        setTimeout(randomAttacks, Math.random()*1500);
+      } else {
+        const result = you.health === 0 ? ".... ;'(" : "Yaaaaaaaay"
+        alert(result)
+      }
+    }
+
+    randomAttacks()
+  }
+}
