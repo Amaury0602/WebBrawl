@@ -27,6 +27,7 @@ export function battleAttack() {
         setTimeout(randomAttacks, Math.random()*1500);
       } else {
         you.health <= 0 ? selectWinner(enemy.id) : selectWinner(you.id)
+        displayButton()
       }
     }
 
@@ -35,6 +36,10 @@ export function battleAttack() {
     function selectWinner(id) {
       const winner = document.getElementById('battle_winner_id');
       winner.value = id
+    }
+
+    function displayButton() {
+      document.querySelector(".result").style.display = "block"
     }
   }
 }

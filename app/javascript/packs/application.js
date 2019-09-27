@@ -5,3 +5,4 @@ import { battleAttack } from '../plugins/battle_attack.js.erb';
 
 selectFighters();
 battleAttack();
+

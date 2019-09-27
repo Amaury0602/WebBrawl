@@ -34,3 +34,16 @@
     }
   }
 }
+
+.result {
+  text-align: center;
+  margin-top: 40px;
+  display: none;
+  input {
+    width: 50%;
+    height: 60px;
+    &:hover {
+    background-color: #E72C23;
+    }
+  }
+}
