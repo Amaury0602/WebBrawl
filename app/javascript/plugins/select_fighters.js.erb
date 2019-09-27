@@ -1,22 +1,24 @@
 export function selectFighters() {
-  const selectButtons = document.querySelectorAll('.select-fighter');
   const startBattle = document.querySelector('.battle-link');
-  startBattle.style.opacity = 0
-  startBattle.style.transitionDuration = "0.3s"
+  if (startBattle) {
+    const selectButtons = document.querySelectorAll('.select-fighter');
+    startBattle.style.opacity = 0
+    startBattle.style.transitionDuration = "0.3s"
 
-  selectButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.currentTarget.classList.toggle('active');
-      const activeFighters = document.getElementsByClassName('active')
-      const enemyFighter = document.querySelector('#battle_enemy_fighter_id');
-      const yourFighter = document.querySelector('#battle_your_fighter_id');
-      if (activeFighters.length === 2) {
-        yourFighter.value = activeFighters[0].attributes[1].value
-        enemyFighter.value = activeFighters[1].attributes[1].value
-        startBattle.style.opacity = 1
-      } else {
-        startBattle.style.opacity = 0
-      }
+    selectButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.currentTarget.classList.toggle('active');
+        const activeFighters = document.getElementsByClassName('active')
+        const enemyFighter = document.querySelector('#battle_enemy_fighter_id');
+        const yourFighter = document.querySelector('#battle_your_fighter_id');
+        if (activeFighters.length === 2) {
+          yourFighter.value = activeFighters[0].attributes[1].value
+          enemyFighter.value = activeFighters[1].attributes[1].value
+          startBattle.style.opacity = 1
+        } else {
+          startBattle.style.opacity = 0
+        }
+      })
     })
-  })
+  }
 }

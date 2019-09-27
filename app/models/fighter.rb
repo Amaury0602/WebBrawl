@@ -5,6 +5,7 @@ class Fighter < ApplicationRecord
   }
   validates :health, :attack, format: { with: /\A\d+\z/, message: "must be number" }
   validate :max_health_and_attack, on: :create
+  validate :min_health_and_attack, on: :create
 
   has_many :your_fighter, class_name: "Battle", foreign_key: "your_fighter_id", dependent: :destroy
   has_many :enemy_fighter, class_name: "Battle", foreign_key: "enemy_fighter_id", dependent: :destroy
@@ -17,6 +18,15 @@ class Fighter < ApplicationRecord
     if attack.class == Integer && health.class == Integer && (attack + health) != 11
       errors.add(:attack, " + health points must be equal to 11 !")
       errors.add(:health, " + attack points must be equal to 11 !")
+    else
+      return true
+    end
+  end
+
+  def min_health_and_attack
+    if attack.zero? || health.zero?
+      errors.add(:attack, "no pacifist here")
+      errors.add(:health, "you need to live first (more than 0)")
     else
       return true
     end
