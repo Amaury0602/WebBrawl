@@ -1,10 +1,18 @@
 <div class="container">
   <div class="battleground">
-    <div class="fighter-one">
+    <div class="fighter">
       <%= @battle.your_fighter.name %>
+      <div class="stats">
+        <%= @battle.your_fighter.health %>
+        <%= @battle.your_fighter.attack %>
+      </div>
     </div>
-    <div class="fighter-two">
+    <div class="fighter">
       <%= @battle.enemy_fighter.name %>
+      <div class="stats">
+        <%= @battle.enemy_fighter.health %>
+        <%= @battle.enemy_fighter.attack %>
+      </div>
     </div>
   </div>
 </div>
