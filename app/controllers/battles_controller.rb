@@ -20,6 +20,18 @@ class BattlesController < ApplicationController
   end
 
   def update
+    @battle = Battle.find(params[:id])
+    if params["battle"]["winner_id"]
+      @battle.winner_id = params["battle"]["winner_id"]
+      @battle.save
+      redirect_to result_battle_path(@battle)
+    else
+      redirect_to fighters_path
+    end
+  end
+
+  def result
+    @battle = Battle.find(params[:id])
   end
 
   def battle_params

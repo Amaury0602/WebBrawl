@@ -1,9 +1,9 @@
 <div class="container">
   <div class="battleground">
-    <div class="fighter" id="your-fighter">
+    <div class="fighter" id="your-fighter" data-fighter="<%= @battle.your_fighter.id %>">
       <%= render "show", fighter: @battle.your_fighter %>
     </div>
-    <div class="fighter" id="enemy-fighter">
+    <div class="fighter" id="enemy-fighter" data-fighter="<%= @battle.enemy_fighter.id %>">
       <%= render "show", fighter: @battle.enemy_fighter %>
     </div>
   </div>
