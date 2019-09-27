@@ -13,6 +13,7 @@
 
     <div class="index-links">
       <%= link_to "Create your own fighter", new_fighter_path %>
+      <%= link_to "See battle history", battles_path  %>
       <div class="create-battle">
         <%= form_for @battle do |f| %>
           <%= f.hidden_field :your_fighter_id, input_html: {

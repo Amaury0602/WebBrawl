@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_135043) do
+ActiveRecord::Schema.define(version: 2019_09_27_133325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_135043) do
     t.bigint "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed", default: false
     t.index ["enemy_fighter_id"], name: "index_battles_on_enemy_fighter_id"
     t.index ["winner_id"], name: "index_battles_on_winner_id"
     t.index ["your_fighter_id"], name: "index_battles_on_your_fighter_id"

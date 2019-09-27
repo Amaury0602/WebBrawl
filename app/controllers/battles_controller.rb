@@ -1,6 +1,10 @@
 class BattlesController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    @battles = Battle.where(completed: true)
+  end
+
   def show
     @battle = Battle.find(params[:id])
   end
@@ -20,9 +24,11 @@ class BattlesController < ApplicationController
   end
 
   def update
+    raise
     @battle = Battle.find(params[:id])
     if params["battle"]["winner_id"]
       @battle.winner_id = params["battle"]["winner_id"]
+      @battle.completed = true
       @battle.save
       redirect_to result_battle_path(@battle)
     else

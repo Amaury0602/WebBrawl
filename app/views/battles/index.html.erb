@@ -1,0 +1,12 @@
+<div class="container">
+  <% @battles.each do |battle| %>
+    <div class="battle-recap">
+      <div class="competitors">
+        <%= battle.enemy_fighter.name %> VS <%= battle.your_fighter.name %>
+      </div>
+      <div class="winner">
+        <p>WINNER : <%= battle.winner.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
