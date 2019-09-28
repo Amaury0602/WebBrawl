@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
-$body-font: "Podkova-Bold";
-$headers-font: "Podkova-Bold";
+$body-font: "Courier", "monospace", "sans-serif";
+$headers-font: "Raleway", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-@font-face {
-  font-family: "Podkova-Bold";
-  src: url('../fonts/Podkova-Bold.ttf');
-  // src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-  //      font-url('FontFile.woff') format('woff'),
-  //      font-url('FontFile.ttf') format('truetype')
-}
+// @font-face {
+//   font-family: "Podkova-Bold";
+//   src: url('../fonts/Podkova-Bold.ttf');
+//   // src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//   //      font-url('FontFile.woff') format('woff'),
+//   //      font-url('FontFile.ttf') format('truetype')
+// }
 // $my-font: "Font Name";
