@@ -4,6 +4,7 @@ require 'faker'
 
 Battle.destroy_all
 Fighter.destroy_all
+Equipment.destroy_all
 
 puts "everything destroyed"
 

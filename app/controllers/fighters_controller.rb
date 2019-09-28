@@ -8,6 +8,7 @@ class FightersController < ApplicationController
   end
 
   def show
+    @equipments = Equipment.all
   end
 
   def new

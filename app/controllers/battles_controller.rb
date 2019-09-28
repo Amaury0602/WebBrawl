@@ -12,6 +12,8 @@ class BattlesController < ApplicationController
   def create
     @battle.winner_id = params["battle"]["winner_id"]
     @battle.save
+    @battle.winner.victories += 1
+    @battle.winner.save
     redirect_to result_battle_path(@battle)
   end
 

@@ -1,13 +1,25 @@
 <div class="container">
-  <div>
-    <h1>Fight with <%= @fighter.name %> ??</h1>
+  <div class="show-content">
     <div class="show-fighter">
-      <%= render "show", fighter: @fighter %>
+      <div class="title">
+        <p><%= @fighter.name %></p>
+        <p><%= @fighter.victories %></p>
+      </div>
+      <div class="characteristics">
+        <p><%= image_tag "heart.PNG", class: "heart-icon" %>
+         <%= @fighter.health %></p>
+        <p><%= image_tag "sword.PNG", class: "sword-icon" %>
+         <%= @fighter.attack %></p>
+      </div>
+    </div>
+    <div class="shop">
+      <%= simple_form_for @fighter, method: :patch do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit %>
+      <% end %>
     </div>
   </div>
-
-  <%= link_to "Custom this fighter", edit_fighter_path(@fighter) %>
-
-
-  <%= link_to "Back to list", fighters_path  %>
+  <div class="show-links">
+    <%= link_to "Back to list", fighters_path  %>
+  </div>
 </div>

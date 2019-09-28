@@ -1,14 +1,17 @@
-.show-fighter {
-  a {
-    color: #0E0000;
-    text-decoration: none;
-  }
-  .heart-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .sword-icon {
-    width: 30px;
-    height: 30px;
+.show-content {
+  display: flex;
+  .show-fighter {
+    a {
+      color: #0E0000;
+      text-decoration: none;
+    }
+    .heart-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .sword-icon {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
