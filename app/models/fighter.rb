@@ -1,4 +1,8 @@
 class Fighter < ApplicationRecord
+
+  belongs_to :left_hand, class_name: "Equipment"
+  belongs_to :right_hand, class_name: "Equipment"
+
   validates :name, presence: true, allow_blank: false, format: {
     with: /\A[a-zA-Z]+\z/,
     message: "must be realistic..."
