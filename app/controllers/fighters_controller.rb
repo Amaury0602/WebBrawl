@@ -1,5 +1,6 @@
 class FightersController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_fighter, only: %i[show edit update]
 
   def index
     @fighters = Fighter.all
@@ -7,7 +8,6 @@ class FightersController < ApplicationController
   end
 
   def show
-    @fighter = Fighter.find(params[:id])
   end
 
   def new
@@ -24,11 +24,9 @@ class FightersController < ApplicationController
   end
 
   def edit
-    @fighter = Fighter.find(params[:id])
   end
 
   def update
-    @fighter = Fighter.find(params[:id])
     @fighter.update(fighter_params)
     if @fighter.save
       redirect_to fighter_path(@fighter)
@@ -38,6 +36,12 @@ class FightersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def set_fighter
+    @fighter = Fighter.find(params[:id])
   end
 
   def fighter_params

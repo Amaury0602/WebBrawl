@@ -1,24 +1,15 @@
 class BattlesController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_battle, only: %i[create new]
 
   def index
     @battles = Battle.all
   end
 
   def new
-    @battle = Battle.new
-    @battle.enemy_fighter_id = params["battle"]["enemy_fighter_id"]
-    @battle.your_fighter_id = params["battle"]["your_fighter_id"]
-  end
-
-  def show
-    @battle = Battle.find(params[:id])
   end
 
   def create
-    @battle = Battle.new
-    @battle.enemy_fighter_id = params["battle"]["enemy_fighter_id"]
-    @battle.your_fighter_id = params["battle"]["your_fighter_id"]
     @battle.winner_id = params["battle"]["winner_id"]
     @battle.save
     redirect_to result_battle_path(@battle)
@@ -26,6 +17,14 @@ class BattlesController < ApplicationController
 
   def result
     @battle = Battle.find(params[:id])
+  end
+
+  private
+
+  def set_battle
+    @battle = Battle.new
+    @battle.enemy_fighter_id = params["battle"]["enemy_fighter_id"]
+    @battle.your_fighter_id = params["battle"]["your_fighter_id"]
   end
 
   def battle_params
