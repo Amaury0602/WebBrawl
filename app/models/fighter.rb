@@ -1,4 +1,8 @@
 class Fighter < ApplicationRecord
+
+  belongs_to :left_hand, class_name: "Equipment"
+  belongs_to :right_hand, class_name: "Equipment"
+
   validates :name, presence: true, allow_blank: false, format: {
     with: /\A[a-zA-Z]+\z/,
     message: "must be realistic..."
@@ -13,6 +17,7 @@ class Fighter < ApplicationRecord
 
 
   before_save :capitalize_name
+  after_initialize :add_hands, if: :new_record?
 
   def max_health_and_attack
     if attack.class == Integer && health.class == Integer && (attack + health) != 11
@@ -37,4 +42,9 @@ class Fighter < ApplicationRecord
     self.name.capitalize!
   end
 
+end
+
+def add_hands
+  self.left_hand = Equipment.first
+  self.right_hand = Equipment.first
 end
