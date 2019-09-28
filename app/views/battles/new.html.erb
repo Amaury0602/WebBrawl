@@ -8,10 +8,16 @@
     </div>
   </div>
   <div class="result">
-    <%= form_for @battle do |f| %>
+    <%= form_for @battle, url: {action: :create} do |f| %>
       <%= f.hidden_field :winner_id, input_html: {
         value: '',
         id: "winner"
+      } %>
+      <%= f.hidden_field :your_fighter_id, input_html: {
+        value: @battle.your_fighter
+      } %>
+      <%= f.hidden_field :enemy_fighter_id, input_html: {
+        value: @battle.enemy_fighter
       } %>
       <%= f.submit "SEE THE RESULT! "%>
     <% end %>
