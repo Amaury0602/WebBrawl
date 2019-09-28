@@ -7,6 +7,8 @@ export function battleAttack() {
       id: yourFighter.attributes[2].value
     }
 
+    console.log(yourFighter.parentElement);
+
     const enemyFighter = document.querySelector("#enemy-fighter")
     const enemy = {
       health: enemyFighter.children[1].children[0].innerText,
@@ -26,15 +28,16 @@ export function battleAttack() {
         }
         setTimeout(randomAttacks, Math.random()*1500);
       } else {
-        you.health <= 0 ? selectWinner(enemy.id) : selectWinner(you.id)
+        you.health <= 0 ? selectWinner(enemy.id, enemyFighter.parentElement) : selectWinner(you.id, yourFighter.parentElement)
         displayButton()
       }
     }
 
     randomAttacks()
 
-    function selectWinner(id) {
-      const winner = document.getElementById('battle_winner_id');
+    function selectWinner(id, element) {
+      const winner = document.getElementById('battle_winner_id')
+      element.style.backgroundColor = "rgb(0, 255, 0,1)";
       winner.value = id
     }
 

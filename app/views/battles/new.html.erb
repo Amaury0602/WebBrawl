@@ -1,10 +1,14 @@
 <div class="container">
   <div class="battleground">
-    <div class="fighter" id="your-fighter" data-fighter="<%= @battle.your_fighter.id %>">
-      <%= render "show", fighter: @battle.your_fighter %>
+    <div class="around">
+      <div class="fighter" id="your-fighter" data-fighter="<%= @battle.your_fighter.id %>">
+        <%= render "new", fighter: @battle.your_fighter %>
+      </div>
     </div>
-    <div class="fighter" id="enemy-fighter" data-fighter="<%= @battle.enemy_fighter.id %>">
-      <%= render "show", fighter: @battle.enemy_fighter %>
+    <div class="around">
+      <div class="fighter" id="enemy-fighter" data-fighter="<%= @battle.enemy_fighter.id %>">
+        <%= render "new", fighter: @battle.enemy_fighter %>
+      </div>
     </div>
   </div>
   <div class="result">

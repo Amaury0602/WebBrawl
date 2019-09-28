@@ -30,7 +30,7 @@ class FightersController < ApplicationController
   def update
     @fighter.update(fighter_params)
     if @fighter.save
-      redirect_to fighter_path(@fighter)
+      redirect_to fighters_path
     else
       render :edit
     end
