@@ -1,17 +1,32 @@
 .show-content {
   display: flex;
   .show-fighter {
+    display: flex;
+    width: 50%;
     a {
       color: #0E0000;
       text-decoration: none;
     }
-    .heart-icon {
-      width: 30px;
-      height: 30px;
+    .title {
+
     }
-    .sword-icon {
-      width: 30px;
-      height: 30px;
+    .characteristics {
+      .heart-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .sword-icon {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
+
+  .shop {
+    width: 50%;
+  }
+}
+.show-links {
+  position: absolute;
+  bottom: 100px;
 }
