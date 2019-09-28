@@ -15,13 +15,13 @@
       <%= link_to "Create your own fighter", new_fighter_path, class: "link" %>
       <%= link_to "See battle history", battles_path, class: "link"  %>
       <div class="create-battle">
-        <%= form_for @battle do |f| %>
+        <%= form_for @battle, url: {controller: "battles", action: :new}, method: :get do |f| %>
           <%= f.hidden_field :your_fighter_id, input_html: {
             value: '',
             id: "your-fighter"
           } %>
           <%= f.hidden_field :enemy_fighter_id, input_html: {
-            value: 'qefq',
+            value: '',
             id: "enemy-fighter"
           } %>
           <%= f.submit "START THE BATTLE", class: "battle-link" %>
