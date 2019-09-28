@@ -3,11 +3,19 @@
 </div>
 <div class="stats">
   <div class="health" data-health="<%= fighter.id %>">
-    <%= image_tag "heart.PNG", class: "heart-icon" %>
-    <%= fighter.health %>
+    <div class="health-count">
+      <%= fighter.health %>
+    </div>
+    <div>
+      <%= image_tag "heart.PNG", class: "heart-icon" %>
+    </div>
   </div>
   <div class="attack" data-attack="<%= fighter.id %>">
-    <%= image_tag "sword.PNG", class: "sword-icon" %>
-    <%= fighter.attack %>
+    <div class="attack-count">
+      <%= fighter.attack %>
+    </div>
+    <div>
+      <%= image_tag "sword.PNG", class: "sword-icon" %>
+    </div>
   </div>
 </div>
