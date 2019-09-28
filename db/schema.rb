@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_101831) do
+ActiveRecord::Schema.define(version: 2019_09_28_153054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2019_09_28_101831) do
     t.index ["enemy_fighter_id"], name: "index_battles_on_enemy_fighter_id"
     t.index ["winner_id"], name: "index_battles_on_winner_id"
     t.index ["your_fighter_id"], name: "index_battles_on_your_fighter_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "mode"
+    t.string "name"
+    t.integer "value"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "fighters", force: :cascade do |t|
