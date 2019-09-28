@@ -14,15 +14,17 @@ export function battleAttack() {
       id: enemyFighter.attributes[2].value
     }
 
+    console.log()
+
     function randomAttacks() {
       let randomFighter = Math.round(Math.random())
       if (you.health > 0 && enemy.health > 0) {
         if (randomFighter === 0) {
           enemy.health -= you.attack
-          enemyFighter.children[1].children[0].innerText -= you.attack
+          enemyFighter.children[1].children[0].children[0].innerText -= you.attack
         } else if (randomFighter === 1) {
           you.health -= enemy.attack
-          yourFighter.children[1].children[0].innerText -= enemy.attack
+          yourFighter.children[1].children[0].children[0].innerText -= enemy.attack
         }
         setTimeout(randomAttacks, Math.random()*1500);
       } else {
