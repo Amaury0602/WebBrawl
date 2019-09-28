@@ -15,6 +15,7 @@
     <div class="shop">
       <%= simple_form_for @fighter, method: :patch do |f| %>
         <%= f.input :name %>
+        <%= f.collection_select :left_hand_id, @equipments, :id, :name %>
         <%= f.button :submit %>
       <% end %>
     </div>

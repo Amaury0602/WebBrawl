@@ -9,7 +9,9 @@ Equipment.destroy_all
 puts "everything destroyed"
 
 
-Equipment.create(name: "hand");
+hand = Equipment.create(mode: "offense", name: "Bare Knuckles", value: 0, level: 0);
+small_shield = Equipment.create(mode: "defense", name: "Small shield", value: 2, level: 1);
+wood_sword = Equipment.create(mode: "offense", name: "Wooden sword", value: 3, level: 3)
 
 
 5.times do
