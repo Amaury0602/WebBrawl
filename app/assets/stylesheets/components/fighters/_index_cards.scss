@@ -8,6 +8,7 @@
     grid-gap: 10px;
     width: 80%;
     .fighter-card {
+      width: 320px;
       color: #0A0709;
       border-radius: 2px;
       margin-bottom: 2px;
@@ -56,6 +57,7 @@
     }
 
       .active {
+        color: #CCCCCC;
         background-color: #6D0001;
       }
     }
@@ -69,7 +71,7 @@
   position: fixed;
   font-size: 20px;
   right: 100px;
-  width: 20%;
+  width: 18%;
   .link {
     text-decoration: none;
     color: inherit;

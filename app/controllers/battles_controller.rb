@@ -13,7 +13,10 @@ class BattlesController < ApplicationController
     @battle.winner_id = params["battle"]["winner_id"]
     @battle.save
     @battle.winner.victories += 1
+    @battle.winner.exp += 1
+    @battle.loser.exp += 0.5
     @battle.winner.save
+    @battle.loser.save
     redirect_to result_battle_path(@battle)
   end
 
