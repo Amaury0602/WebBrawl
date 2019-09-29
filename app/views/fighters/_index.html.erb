@@ -4,9 +4,17 @@
   </div>
   <div class="stats">
    <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-    <%= fighter.health %></p>
+    <% if fighter.defense_equipment%>
+      <%= fighter.health%>+<%=fighter.defense_equipment %></p>
+    <% else %>
+      <%= fighter.health%></p>
+    <% end %>
    <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-    <%= fighter.attack %></p>
+    <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
+      <%= fighter.attack%>+<%=fighter.offense_equipment %></p>
+    <% else %>
+      <%= fighter.attack%></p>
+    <% end %>
     <button class="select-fighter" data-fighter="<%= fighter.id %>" ><strong>SELECT THIS FIGHTER</strong></button>
   </div>
 </div>
