@@ -5,13 +5,13 @@
   <div class="stats">
    <p><%= image_tag "heart.PNG", class: "heart-icon" %>
     <% if fighter.defense_equipment%>
-      <%= fighter.health%>+<%=fighter.defense_equipment %></p>
+      <%= fighter.health%><span class="bonus">+<%=fighter.defense_equipment %></span></p>
     <% else %>
       <%= fighter.health%></p>
     <% end %>
    <p><%= image_tag "sword.PNG", class: "sword-icon" %>
     <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
-      <%= fighter.attack%>+<%=fighter.offense_equipment %></p>
+      <%= fighter.attack%><span class="bonus">+<%=fighter.offense_equipment %></span> </p>
     <% else %>
       <%= fighter.attack%></p>
     <% end %>
