@@ -3,19 +3,40 @@
     <div class="show-fighter">
       <div class="title">
         <p><%= @fighter.name %></p>
-        <p><%= @fighter.victories %></p>
+        <p><%= @fighter.victories %> win(s)</p>
       </div>
       <div class="characteristics">
-        <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-         <%= @fighter.health %></p>
-        <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-         <%= @fighter.attack %></p>
+        <div class="base">
+          <p><%= image_tag "heart.PNG", class: "heart-icon" %>
+           <%= @fighter.health %></p>
+          <p><%= image_tag "sword.PNG", class: "sword-icon" %>
+           <%= @fighter.attack %></p>
+        </div>
+        <div class="equipment">
+          <p><%= @fighter.left_hand.name %></p>
+          <p><%= @fighter.right_hand.name %></p>
+        </div>
       </div>
     </div>
     <div class="shop">
+      <div class="available">
+        <div class="presentation">
+          <p>Welcome to the shop</p>
+        </div>
+        <div class="gears">
+          <ul>
+            <% @equipments.each do |equipment| %>
+              <li><%= equipment.name %> <p>Level : <%= equipment.level %></p></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
       <%= simple_form_for @fighter, method: :patch do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name, label: false%>
+        <%= f.label :left_hand_id %>
         <%= f.collection_select :left_hand_id, @equipments, :id, :name %>
+        <%= f.label :right_hand_id %>
         <%= f.collection_select :right_hand_id, @equipments, :id, :name %>
         <%= f.button :submit %>
       <% end %>

@@ -1,42 +1,72 @@
 .show-content {
   display: flex;
   font-size: 31px;
+  height: 700px;
   .show-fighter {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
     width: 50%;
+    height: 100%;
+    border: 1px solid;
     a {
       color: #0E0000;
       text-decoration: none;
     }
     .title {
-
+      display: flex;
+      justify-content: space-around;
     }
     .characteristics {
-      .heart-icon {
-        width: 30px;
-        height: 30px;
+      background-color: #e06728;
+      display: flex;
+      justify-content: space-around;
+      font-weight: bolder;
+      .base {
+        .heart-icon {
+          width: 30px;
+          height: 30px;
+        }
+        .sword-icon {
+          width: 30px;
+          height: 30px;
+        }
       }
-      .sword-icon {
-        width: 30px;
-        height: 30px;
+      .equipment {
       }
     }
   }
 
   .shop {
     width: 50%;
+    border: 1px solid;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 28px;
+    .available {
+      ul {
+        list-style: none;
+      }
+    }
+    .simple_form {
+      width: 79%;
+      margin-left: 60px;
+    }
   }
 }
 .show-links {
   text-decoration: none;
-  color: inherit;
   position: absolute;
   bottom: 100px;
   width: 10%;
   text-align: center;
-  padding-top: 13px;
-  margin-bottom: 20px;
   transition-duration: 0.5s;
+  color: #0E0000;
+  font-size: 20px;
   &:hover {
     background-color: #E72C23;
   }
