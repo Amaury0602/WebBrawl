@@ -23,14 +23,26 @@ export function battleAttack() {
       const enemyPower = enemy.attack + enemy.weapon
       let randomFighter = Math.round(Math.random())
       if (you.health > 0 && enemy.health > 0) {
-        if (randomFighter === 0) {
-          enemy.health -= youPower
-          enemyFighter.querySelector('.base-health').innerText -= youPower
-        } else if (randomFighter === 1) {
-          you.health -= enemyPower
-          yourFighter.querySelector('.base-health').innerText -= enemyPower
+        if (randomFighter === 0) { // PROBA QUE YOU ATTAQUE ENEMY
+          if (!blockAttack(enemy.armor)) {
+            attacked(enemyFighter.parentElement)
+            enemy.health -= youPower
+            enemyFighter.querySelector('.base-health').innerText -= youPower
+          }
+          else {
+            blocked(enemyFighter.parentElement)
+          }
+        } else if (randomFighter === 1) { // PROBA QU'ENEMY ATTAQUE YOU
+          if(!blockAttack(you.armor)) {
+            attacked(yourFighter.parentElement)
+            you.health -= enemyPower
+            yourFighter.querySelector('.base-health').innerText -= enemyPower
+          }
+          else {
+            blocked(yourFighter.parentElement)
+          }
         }
-        setTimeout(randomAttacks, Math.random()*5000);
+        setTimeout(randomAttacks, Math.random()*3000);
       } else {
         you.health <= 0 ? selectWinner(enemy.id, enemyFighter.parentElement) : selectWinner(you.id, yourFighter.parentElement)
         displayButton()
@@ -46,11 +58,25 @@ export function battleAttack() {
     }
 
     function displayButton() {
-      document.querySelector(".result").style.opacity = 1
+      document.querySelector(".result").classList.add('active')
     }
 
     function blockAttack(armor) {
-      // PLUS ON A D'ARMURE PLUS ON A DE CHANCE DE PARER
+      return Math.random()*10 < armor
+    }
+
+    function attacked(element) {
+      element.classList.add('attacked')
+      setTimeout(function(){
+        element.classList.remove('attacked')
+      }, 500)
+    }
+
+    function blocked(element) {
+      element.classList.add('blocked')
+      setTimeout(function(){
+        element.classList.remove('blocked')
+      }, 500)
     }
   }
 }

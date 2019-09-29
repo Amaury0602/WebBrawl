@@ -4,7 +4,7 @@
   justify-content: space-around;
   color: #0A0709;
   .around {
-    background-color: rgba(0, 255, 0,0);
+    //background-color: rgba(0, 255, 0,0);
     transition-duration: 0.5s;
     .fighter {
       border-radius: 2px;
@@ -59,6 +59,17 @@
     font-weight: bolder;
     font-size: 25px;
   }
+}
+.active {
+  opacity: 1;
+}
+
+.attacked {
+  background-color: #CC0003;
+}
+
+.blocked {
+  background-color: #2AB0EA;
 }
 
 
