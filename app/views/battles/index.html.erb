@@ -2,13 +2,19 @@
   <div class="all-battles">
     <% @battles.each do |battle| %>
       <div class="battle-recap">
-        <div class="competitors">
-          <%= battle.enemy_fighter.name %> VS <%= battle.your_fighter.name %>
+        <div class="infos">
+          <div class="competitors">
+            <%= battle.enemy_fighter.name %> VS <%= battle.your_fighter.name %>
+          </div>
+          <div class="date">
+            <%= battle.created_at.to_date %>
+          </div>
         </div>
         <div class="winner">
-          <p>WINNER : <%= battle.winner.name %></p>
+          <p><strong>WINNER : <%= battle.winner.name %> with .... health remaining</strong></p>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+

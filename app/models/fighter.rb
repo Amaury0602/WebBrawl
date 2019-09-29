@@ -42,9 +42,20 @@ class Fighter < ApplicationRecord
     self.name.capitalize!
   end
 
+  def battle_count
+    Battle.where(your_fighter: self).or(Battle.where(enemy_fighter: self)).count
+  end
+
+  def defense_equipment
+  end
+
+  def offense_equipment
+  end
 end
 
 def add_hands
   self.left_hand = Equipment.first
   self.right_hand = Equipment.first
 end
+
+
