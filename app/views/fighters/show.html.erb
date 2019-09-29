@@ -1,23 +1,6 @@
 <div class="container">
   <div class="show-content">
-    <div class="show-fighter">
-      <div class="title">
-        <p><%= @fighter.name %></p>
-        <p><%= @fighter.victories %> win(s)</p>
-      </div>
-      <div class="characteristics">
-        <div class="base">
-          <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-           <%= @fighter.health %></p>
-          <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-           <%= @fighter.attack %></p>
-        </div>
-        <div class="equipment">
-          <p><%= @fighter.left_hand.name %></p>
-          <p><%= @fighter.right_hand.name %></p>
-        </div>
-      </div>
-    </div>
+    <%= render "show", fighter: @fighter %>
     <div class="shop">
       <div class="available">
         <div class="presentation">
@@ -32,13 +15,12 @@
         </div>
       </div>
 
-      <%= simple_form_for @fighter, method: :patch do |f| %>
-        <%= f.input :name, label: false%>
+      <%= simple_form_for @fighter, method: :patch, remote: true do |f| %>
+        <%= f.input :name, input_html: { class: 'name-change' }, label: false%>
         <%= f.label :left_hand_id %>
-        <%= f.collection_select :left_hand_id, @equipments, :id, :name %>
+        <%= f.collection_select :left_hand_id, @equipments, :id, :name, {}, {class: 'equipment-selector'}%>
         <%= f.label :right_hand_id %>
-        <%= f.collection_select :right_hand_id, @equipments, :id, :name %>
-        <%= f.button :submit %>
+        <%= f.collection_select :right_hand_id, @equipments, :id, :name, {}, {class: 'equipment-selector'} %>
       <% end %>
     </div>
   </div>

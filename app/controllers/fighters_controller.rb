@@ -26,10 +26,13 @@ class FightersController < ApplicationController
 
   def update
     @fighter.update(fighter_params)
-    if @fighter.save
-      redirect_to fighters_path
-    else
-      render :edit
+    respond_to do |format|
+      if @fighter.save
+        format.html { redirect_to fighter_path(@fighter) }
+        format.js
+      else
+        format.html { redirect_to fighters_path }
+      end
     end
   end
 
