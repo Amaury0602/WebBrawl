@@ -1,6 +1,6 @@
 class FightersController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_fighter, only: %i[show edit update]
+  before_action :set_fighter, only: %i[show update]
 
   def index
     @fighters = Fighter.all
@@ -22,9 +22,6 @@ class FightersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
