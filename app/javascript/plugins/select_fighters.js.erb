@@ -2,8 +2,7 @@ export function selectFighters() {
   const startBattle = document.querySelector('.battle-link');
   if (startBattle) {
     const selectButtons = document.querySelectorAll('.select-fighter');
-    startBattle.style.opacity = 0
-    startBattle.style.transitionDuration = "0.3s"
+    startBattle.style.display = "none"
 
     selectButtons.forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -14,9 +13,9 @@ export function selectFighters() {
         if (activeFighters.length === 2) {
           yourFighter.value = activeFighters[0].attributes[1].value
           enemyFighter.value = activeFighters[1].attributes[1].value
-          startBattle.style.opacity = 1
+          startBattle.style.display = "block"
         } else {
-          startBattle.style.opacity = 0
+          startBattle.style.display = "none"
         }
       })
     })

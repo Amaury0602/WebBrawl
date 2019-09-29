@@ -25,7 +25,7 @@
         </div>
         <div class="gears">
           <ul>
-            <% @equipments.each do |equipment| %>
+            <% Equipment.where.not(name: "Bare Knuckles").each do |equipment| %>
               <li><%= equipment.name %> <p>Level : <%= equipment.level %></p></li>
             <% end %>
           </ul>
