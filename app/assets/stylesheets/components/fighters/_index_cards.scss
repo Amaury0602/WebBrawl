@@ -8,17 +8,18 @@
     grid-gap: 10px;
     width: 80%;
     .fighter-card {
+      color: #0A0709;
       border-radius: 2px;
       margin-bottom: 2px;
       height: 300px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background-color: #e06728;
+      background-color: #CCCCCC;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      transition: all 0.5s cubic-bezier(.25,.8,.25,1);
       &:hover {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.70), 0 10px 10px rgba(0,0,0,0.70);
       }
       .name {
         font-size: 24px;
@@ -26,11 +27,13 @@
         text-align: center;
         height: 25%;
         a {
-          color: black;
+          color: #0A0709;
         }
       }
 
       .stats {
+        font-weight: bolder;
+        font-size: 20px;
         .heart-icon {
           width: 30px;
           height: 30px;
@@ -41,9 +44,7 @@
           height: 30px;
         }
         .bonus {
-          font-size: 20px;
-          font-weight: bolder;
-          color: rgb(0, 255, 0);
+          color: #06BA00;
         }
 
 
@@ -55,7 +56,7 @@
     }
 
       .active {
-        background-color: #E72C23;
+        background-color: #6D0001;
       }
     }
   }
@@ -63,8 +64,10 @@
 
 .index-links {
   display: flex;
+  font-weight: bolder;
   flex-direction: column;
   position: fixed;
+  font-size: 20px;
   right: 100px;
   width: 20%;
   .link {
@@ -77,24 +80,28 @@
     padding-top: 13px;
     margin-bottom: 20px;
     transition-duration: 0.5s;
+    padding-bottom: 40px;
     &:hover {
-      background-color: #E72C23;
+      color: #0A0709;
+      background-color: #CCCCCC;
     }
   }
   .battle-link {
-    font-size: 20px;
-    font-weight: bolder;
     text-decoration: none;
+    font-weight: bolder;
     width: 100%;
     height: 100px;
     transition-duration: 0.5s;
     &:hover {
-      background-color: #E72C23;
+      color: #F9F9F9;
+      background-color: #6D0001;
     }
   }
 }
 
 .title {
+  margin-top: 15px;
+  padding-right: 172px;
   text-align: center;
   font-weight: bolder;
 }
