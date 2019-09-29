@@ -1,0 +1,12 @@
+<div class="fighter-card" >
+  <div class="name">
+    <p><%= link_to fighter.name, fighter_path(fighter)  %></p>
+  </div>
+  <div class="stats">
+   <p><%= image_tag "heart.PNG", class: "heart-icon" %>
+    <%= fighter.health %></p>
+   <p><%= image_tag "sword.PNG", class: "sword-icon" %>
+    <%= fighter.attack %></p>
+    <button class="select-fighter" data-fighter="<%= fighter.id %>" ><strong>SELECT THIS FIGHTER</strong></button>
+  </div>
+</div>

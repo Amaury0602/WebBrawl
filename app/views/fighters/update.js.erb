@@ -1,0 +1,8 @@
+function refreshFighter(innerHTML) {
+  const showContent = document.querySelector('.show-content')
+  document.querySelector('.show-fighter').remove()
+  showContent.insertAdjacentHTML('afterbegin', innerHTML)
+}
+
+refreshFighter('<%= j render "fighters/show", fighter: @fighter %> ')
+console.log("hello")
