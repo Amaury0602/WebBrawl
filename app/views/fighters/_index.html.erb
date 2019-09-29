@@ -1,6 +1,6 @@
 <div class="fighter-card" >
   <div class="name">
-    <p><%= link_to fighter.name, fighter_path(fighter)  %></p>
+    <p><%= link_to fighter.name, fighter_path(fighter)%> (lv.<%= fighter.exp %>) </p>
   </div>
   <div class="stats">
    <p><%= image_tag "heart.PNG", class: "heart-icon" %>

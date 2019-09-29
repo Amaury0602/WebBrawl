@@ -3,12 +3,13 @@ class FightersController < ApplicationController
   before_action :set_fighter, only: %i[show update]
 
   def index
-    @fighters = Fighter.all
+    @fighters = Fighter.all.order('exp DESC')
     @battle = Battle.new
   end
 
   def show
-    @equipments = Equipment.all
+    @all_equipments = Equipment.all
+    @equipments = Equipment.can_handle(@fighter)
   end
 
   def new
