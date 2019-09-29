@@ -4,16 +4,28 @@
 <div class="stats">
   <div class="health" data-health="<%= fighter.id %>">
     <div class="health-count">
-      <%= fighter.health %>
+      <div class="base-health">
+        <%= fighter.health %>
+      </div>
+      <% if fighter.defense_equipment %>
+        <div class="armor">
+          <%= fighter.defense_equipment %>
+        </div>
+      <% end %>
     </div>
     <div>
       <%= image_tag "heart.PNG", class: "heart-icon" %>
     </div>
   </div>
   <div class="attack" data-attack="<%= fighter.id %>">
-    <div class="attack-count">
+    <div class="base-attack">
       <%= fighter.attack %>
     </div>
+    <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
+      <div class="weapon">
+        <%= fighter.offense_equipment %>
+      </div>
+    <% end %>
     <div>
       <%= image_tag "sword.PNG", class: "sword-icon" %>
     </div>

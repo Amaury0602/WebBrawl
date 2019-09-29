@@ -2,31 +2,47 @@ export function battleAttack() {
   const yourFighter = document.querySelector("#your-fighter")
   if (yourFighter) {
     const you = {
-      health: yourFighter.children[1].children[0].innerText,
-      attack: yourFighter.children[1].children[1].innerText,
+      health: parseInt(yourFighter.querySelector('.base-health').innerText),
+      attack: parseInt(yourFighter.querySelector('.base-attack').innerText),
+      armor: yourFighter.querySelector('.armor') ? parseInt(yourFighter.querySelector('.armor').innerText) : 0,
+      weapon: yourFighter.querySelector('.weapon') ? parseInt(yourFighter.querySelector('.weapon').innerText) : 0,
       id: yourFighter.attributes[2].value
     }
 
-    console.log(yourFighter.parentElement);
-
     const enemyFighter = document.querySelector("#enemy-fighter")
     const enemy = {
-      health: enemyFighter.children[1].children[0].innerText,
-      attack: enemyFighter.children[1].children[1].innerText,
+      health: parseInt(enemyFighter.querySelector('.base-health').innerText),
+      attack: parseInt(enemyFighter.querySelector('.base-attack').innerText),
+      armor: enemyFighter.querySelector('.armor') ? parseInt(enemyFighter.querySelector('.armor').innerText) : 0,
+      weapon: enemyFighter.querySelector('.weapon') ? parseInt(enemyFighter.querySelector('.weapon').innerText) : 0,
       id: enemyFighter.attributes[2].value
     }
 
     function randomAttacks() {
+      const youPower = you.attack + you.weapon
+      const enemyPower = enemy.attack + enemy.weapon
       let randomFighter = Math.round(Math.random())
       if (you.health > 0 && enemy.health > 0) {
-        if (randomFighter === 0) {
-          enemy.health -= you.attack
-          enemyFighter.children[1].children[0].children[0].innerText -= you.attack
-        } else if (randomFighter === 1) {
-          you.health -= enemy.attack
-          yourFighter.children[1].children[0].children[0].innerText -= enemy.attack
+        if (randomFighter === 0) { // PROBA QUE YOU ATTAQUE ENEMY
+          if (!blockAttack(enemy.armor)) {
+            attacked(enemyFighter.parentElement)
+            enemy.health -= youPower
+            enemyFighter.querySelector('.base-health').innerText -= youPower
+          }
+          else {
+            blocked(enemyFighter.parentElement)
+          }
+        } else if (randomFighter === 1) { // PROBA QU'ENEMY ATTAQUE YOU
+          if(!blockAttack(you.armor)) {
+            attacked(yourFighter.parentElement)
+            you.health -= enemyPower
+            yourFighter.querySelector('.base-health').innerText -= enemyPower
+          }
+          else {
+            blocked(yourFighter.parentElement)
+          }
         }
-        setTimeout(randomAttacks, Math.random()*1500);
+        setTimeout(randomAttacks, Math.random()*3000);
       } else {
         you.health <= 0 ? selectWinner(enemy.id, enemyFighter.parentElement) : selectWinner(you.id, yourFighter.parentElement)
         displayButton()
@@ -42,7 +58,25 @@ export function battleAttack() {
     }
 
     function displayButton() {
-      document.querySelector(".result").style.opacity = 1
+      document.querySelector(".result").classList.add('active')
+    }
+
+    function blockAttack(armor) {
+      return Math.random()*10 < armor
+    }
+
+    function attacked(element) {
+      element.classList.add('attacked')
+      setTimeout(function(){
+        element.classList.remove('attacked')
+      }, 500)
+    }
+
+    function blocked(element) {
+      element.classList.add('blocked')
+      setTimeout(function(){
+        element.classList.remove('blocked')
+      }, 500)
     }
   }
 }
