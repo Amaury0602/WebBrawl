@@ -13,6 +13,7 @@
         <%= fighter.health %>
       </div>
       <% if fighter.defense_equipment %>
+        <p> + </p>
         <div class="armor">
           <%= fighter.defense_equipment %>
         </div>
@@ -23,14 +24,17 @@
     </div>
   </div>
   <div class="attack" data-attack="<%= fighter.id %>">
-    <div class="base-attack">
-      <%= fighter.attack %>
-    </div>
-    <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
-      <div class="weapon">
-        <%= fighter.offense_equipment %>
+    <div class="attack-count">
+      <div class="base-attack">
+        <%= fighter.attack %>
       </div>
-    <% end %>
+      <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
+        <p> + </p>
+        <div class="weapon">
+          <%= fighter.offense_equipment %>
+        </div>
+      <% end %>
+    </div>
     <div>
       <%= image_tag "sword.PNG", class: "sword-icon" %>
     </div>

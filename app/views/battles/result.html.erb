@@ -1,14 +1,19 @@
 <div class="container">
   <div class="result-card">
-    <div class="title">
-     <h1><%= @battle.winner.name %> won the fight !</h2>
+    <div class="result-title">
+      <h1><%= @battle.winner.name %> won the fight !</h1>
     </div>
     <div class="fight-details">
-      <p>He defeated <%= @battle.loser.name %></p>
+      <% if @battle.remaining_health > 7 %>
+        <h2><%= @battle.winner.name %> destroyed <%= @battle.loser.name %></h2>
+      <% elsif @battle.remaining_health < 3 %>
+        <h2>Close one... <%= @battle.winner.name %> only has <%= @battle.remaining_health%> health left </h2>
+      <% else %>
+        <h2>He defeated <%= @battle.loser.name %> with <%= @battle.remaining_health %> health remaining  </h2>
+      <% end %>
     </div>
-  </div>
-
-  <div class="links">
-    <%= link_to "You can now give stuff to this fighter", fighter_path(@battle.winner)  %>
+    <div class="links">
+      <%= link_to "You can now give stuff to this fighter", fighter_path(@battle.winner)  %>
+    </div>
   </div>
 </div>

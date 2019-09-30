@@ -23,15 +23,32 @@
         margin-top: 5px;
         text-align: center;
       }
+      .battle-photo {
+        text-align: center;
+      }
       .stats {
         font-size: 30px;
         display: flex;
         justify-content: space-around;
         margin-bottom: 3px;
+        .health-count {
+          display: flex;
+          justify-content: space-between;
+          .armor {
+            color: #2AB0EA;
+          }
+        }
         .heart-icon{
           width: 40px;
           height: 40px;
           margin-left: -5px;
+        }
+        .attack-count {
+          display: flex;
+          justify-content: space-between;
+          .weapon {
+            color: #CC0003;
+          }
         }
         .sword-icon {
           width: 30px;
