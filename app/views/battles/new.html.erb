@@ -23,6 +23,10 @@
       <%= f.hidden_field :enemy_fighter_id, input_html: {
         value: @battle.enemy_fighter
       } %>
+      <%= f.hidden_field :remaining_health, input_html: {
+        value: '',
+        id: "health-remain"
+      } %>
       <%= f.submit "SEE THE RESULT!", class: "submit-battle"%>
     <% end %>
   </div>

@@ -10,7 +10,8 @@ class BattlesController < ApplicationController
   end
 
   def create
-    @battle.winner_id = params["battle"]["winner_id"]
+    @battle.winner_id = params[:battle][:winner_id]
+    @battle.remaining_health = params[:battle][:remaining_health]
     @battle.save
     @battle.winner.victories += 1
     @battle.winner.exp += 1
