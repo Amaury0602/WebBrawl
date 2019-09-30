@@ -1,4 +1,5 @@
 class Fighter < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
 
   belongs_to :left_hand, class_name: "Equipment"
   belongs_to :right_hand, class_name: "Equipment"

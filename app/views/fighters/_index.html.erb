@@ -3,18 +3,25 @@
     <p><%= link_to fighter.name, fighter_path(fighter)%> (lvl:<%= fighter.exp %>) </p>
   </div>
   <div class="stats">
-   <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-    <% if fighter.defense_equipment%>
-      <%= fighter.health%><span class="bonus">+<%=fighter.defense_equipment %></span></p>
-    <% else %>
-      <%= fighter.health%></p>
-    <% end %>
-   <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-    <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
-      <%= fighter.attack%><span class="bonus">+<%=fighter.offense_equipment %></span> </p>
-    <% else %>
-      <%= fighter.attack%></p>
-    <% end %>
-    <button class="select-fighter" data-fighter="<%= fighter.id %>" ><strong>SELECT THIS FIGHTER</strong></button>
+    <div class="stats-numbers">
+     <p><%= image_tag "heart.PNG", class: "heart-icon" %>
+      <% if fighter.defense_equipment%>
+        <%= fighter.health%><span class="bonus">+<%=fighter.defense_equipment %></span></p>
+      <% else %>
+        <%= fighter.health%></p>
+      <% end %>
+     <p><%= image_tag "sword.PNG", class: "sword-icon" %>
+      <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
+        <%= fighter.attack%><span class="bonus">+<%=fighter.offense_equipment %></span> </p>
+      <% else %>
+        <%= fighter.attack%></p>
+      <% end %>
+    </div>
+    <div class="photo">
+      <% if fighter.photo %>
+        <%= cl_image_tag fighter.photo, height: 150, width: 150, crop: :fill %>
+      <% end %>
+    </div>
   </div>
+  <button class="select-fighter" data-fighter="<%= fighter.id %>" ><strong>SELECT THIS FIGHTER</strong></button>
 </div>
