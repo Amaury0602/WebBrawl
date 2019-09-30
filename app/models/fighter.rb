@@ -6,7 +6,7 @@ class Fighter < ApplicationRecord
   validates :name, presence: true, allow_blank: false, format: {
     with: /\A[a-zA-Z]+\z/,
     message: "must be realistic..."
-  }, length: { maximum: 15 }
+  }, length: { maximum: 13 }
 
   validates :health, :attack, format: { with: /\A\d+\z/, message: "must be number" }
   validate :max_health_and_attack, on: :create

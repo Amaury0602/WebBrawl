@@ -70,15 +70,22 @@
 }
 .show-links {
   text-decoration: none;
-  position: absolute;
-  bottom: 100px;
-  width: 10%;
   text-align: center;
   transition-duration: 0.5s;
-  color: #0E0000;
-  font-size: 20px;
+  margin-top: 30px;
+  font-size: 40px;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-left: 334px;
+  width: 40%;
   &:hover {
-    background-color: #CC0003;
+    background-color: #0E0000;
+    color: #CCCCCC;
+  }
+  a {
+    //color: #0E0000;
+    font-weight: bolder;
+    text-decoration: none;
   }
 }
 

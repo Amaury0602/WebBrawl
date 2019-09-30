@@ -1,6 +1,9 @@
 export function battleAttack() {
   const yourFighter = document.querySelector("#your-fighter")
+  const enemyFighter = document.querySelector("#enemy-fighter")
+
   if (yourFighter) {
+
     const you = {
       health: parseInt(yourFighter.querySelector('.base-health').innerText),
       attack: parseInt(yourFighter.querySelector('.base-attack').innerText),
@@ -9,7 +12,6 @@ export function battleAttack() {
       id: yourFighter.attributes[2].value
     }
 
-    const enemyFighter = document.querySelector("#enemy-fighter")
     const enemy = {
       health: parseInt(enemyFighter.querySelector('.base-health').innerText),
       attack: parseInt(enemyFighter.querySelector('.base-attack').innerText),
@@ -44,17 +46,20 @@ export function battleAttack() {
         }
         setTimeout(randomAttacks, Math.random()*3000);
       } else {
-        you.health <= 0 ? selectWinner(enemy.id, enemyFighter.parentElement) : selectWinner(you.id, yourFighter.parentElement)
+        you.health <= 0 ? selectWinner(enemy, enemyFighter) : selectWinner(you, yourFighter)
         displayButton()
       }
     }
 
     randomAttacks()
 
-    function selectWinner(id, element) {
-      const winner = document.getElementById('battle_winner_id')
-      element.style.backgroundColor = "rgb(0, 255, 0,1)";
-      winner.value = id
+    function selectWinner(winner, element) {
+      const winDiv = document.getElementById('battle_winner_id')
+      const remaining_health = document.getElementById('battle_remaining_health')
+      element.parentElement.style.backgroundColor = "rgb(0, 255, 0,1)";
+      winDiv.value = winner.id
+      remaining_health.value = winner.health
+      console.log(remaining_health)
     }
 
     function displayButton() {

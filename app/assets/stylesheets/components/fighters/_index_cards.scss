@@ -5,10 +5,10 @@
   .fighter-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    width: 80%;
+    grid-gap: 5px;
     .fighter-card {
-      width: 320px;
+      flex-basis: 60%;
+      width: 279px;
       color: #0A0709;
       border-radius: 2px;
       margin-bottom: 2px;
@@ -68,10 +68,9 @@
   display: flex;
   font-weight: bolder;
   flex-direction: column;
-  position: fixed;
-  font-size: 20px;
-  right: 60px;
-  width: 20%;
+  font-size: 17px;
+  width: 23%;
+  margin-left: 9px;
   .link {
     text-decoration: none;
     color: inherit;
