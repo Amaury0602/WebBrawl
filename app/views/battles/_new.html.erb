@@ -1,6 +1,11 @@
 <div class="name">
   <%= fighter.name %>
 </div>
+<div class="battle-photo">
+  <% if !fighter.photo.nil? %>
+    <%= cl_image_tag fighter.photo, height: 200, width: 200, crop: :fill %>
+  <% end %>
+</div>
 <div class="stats">
   <div class="health" data-health="<%= fighter.id %>">
     <div class="health-count">

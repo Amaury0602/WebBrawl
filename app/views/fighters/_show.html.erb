@@ -3,6 +3,11 @@
     <p><%= fighter.name %></p>
     <p><%= fighter.victories %> win(s) / <%= fighter.battle_count %> </p>
   </div>
+  <div class="show-photo">
+    <% if !fighter.photo.nil? %>
+      <%= cl_image_tag fighter.photo, height: 200, width: 200, crop: :fill %>
+    <% end %>
+  </div>
   <div class="characteristics">
     <div class="base">
       <p><%= image_tag "heart.PNG", class: "heart-icon" %>

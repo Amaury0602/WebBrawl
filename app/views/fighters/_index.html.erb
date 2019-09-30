@@ -18,7 +18,7 @@
       <% end %>
     </div>
     <div class="photo">
-      <% if fighter.photo %>
+      <% if !fighter.photo.nil? %>
         <%= cl_image_tag fighter.photo, height: 150, width: 150, crop: :fill %>
       <% end %>
     </div>
