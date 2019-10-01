@@ -46,8 +46,11 @@
           width: 30px;
           height: 30px;
         }
-        .bonus {
-          color: #06BA00;
+        .bonus-armor {
+          color: #2AB0EA;
+        }
+        .bonus-att {
+          color: #CC0003;
         }
 
 
@@ -60,7 +63,7 @@
 
       .active {
         color: #CCCCCC;
-        background-color: #6D0001;
+        background-color: #CC0003;
       }
     }
   }
@@ -97,7 +100,7 @@
     transition-duration: 0.5s;
     &:hover {
       color: #F9F9F9;
-      background-color: #6D0001;
+      background-color: #CC0003;
     }
   }
 }

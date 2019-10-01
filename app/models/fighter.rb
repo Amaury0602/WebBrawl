@@ -49,11 +49,11 @@ class Fighter < ApplicationRecord
   end
 
   def defense_equipment
-    if right_hand.mode == "defense" && left_hand.mode == "defense"
+    if right_hand.mode == "armor" && left_hand.mode == "armor"
       return left_hand.value + right_hand.value
-    elsif left_hand.mode == "defense"
+    elsif left_hand.mode == "armor"
       return left_hand.value
-    elsif right_hand.mode == "defense"
+    elsif right_hand.mode == "armor"
       return right_hand.value
     else
       return nil
@@ -61,11 +61,11 @@ class Fighter < ApplicationRecord
   end
 
   def offense_equipment
-    if right_hand.mode == "offense" && left_hand.mode == "offense"
+    if right_hand.mode == "attack" && left_hand.mode == "attack"
       return left_hand.value + right_hand.value
-    elsif left_hand.mode == "offense"
+    elsif left_hand.mode == "attack"
       return left_hand.value
-    elsif right_hand.mode == "offense"
+    elsif right_hand.mode == "attack"
       return right_hand.value
     else
       return nil

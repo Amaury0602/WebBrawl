@@ -9,7 +9,7 @@
         <div class="gears">
           <ul>
             <% Equipment.where.not(name: "Bare Knuckles").each do |equipment| %>
-              <li class=""><%= equipment.name %>(Level <%= equipment.level %>)</li>
+              <li class=""><%= equipment.name %>(Level <%= equipment.level %>): + <%= "#{equipment.value} #{equipment.mode}" %></li>
             <% end %>
           </ul>
         </div>

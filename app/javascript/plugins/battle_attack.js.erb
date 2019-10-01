@@ -71,9 +71,12 @@ export function battleAttack() {
     }
 
     function attacked(element) {
+      console.log(element.querySelector('.base-health'))
       element.classList.add('attacked')
+      element.querySelector('.base-health').classList.add('grow-red')
       setTimeout(function(){
         element.classList.remove('attacked')
+        element.querySelector('.base-health').classList.remove('grow-red')
       }, 500)
     }
 
@@ -85,3 +88,7 @@ export function battleAttack() {
     }
   }
 }
+
+
+
+//47

@@ -11,9 +11,16 @@
   <div class="characteristics">
     <div class="base">
       <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-       <%= fighter.health %></p>
+       <%= fighter.health %>
+       <% if fighter.defense_equipment && !fighter.defense_equipment.zero? %>
+          <span class="show-bonus-armor">+ <%= fighter.defense_equipment %> <%= image_tag "shield.PNG", class: "heart-icon" %></span>
+       <% end %>
+      </p>
       <p><%= image_tag "sword.PNG", class: "sword-icon" %>
        <%= fighter.attack %></p>
+       <% if fighter.offense_equipment && !fighter.offense_equipment.zero? %>
+          <span class="show-bonus-attack">+ <%= fighter.offense_equipment %></span>
+       <% end %>
     </div>
     <div class="equipment">
       <p><%= fighter.left_hand.name %></p>

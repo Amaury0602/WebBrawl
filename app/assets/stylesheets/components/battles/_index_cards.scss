@@ -1,0 +1,26 @@
+.won-lost {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.index-battle {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  .index-fighter {
+    .index-battle-photo {
+
+    }
+    .fighter-name {
+      text-align: center;
+    }
+  }
+}
+
+.index-vs {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+}

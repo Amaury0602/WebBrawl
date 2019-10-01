@@ -1,0 +1,10 @@
+<div class="index-fighter">
+  <div class="index-battle-photo">
+    <% if !fighter.photo.nil? %>
+      <%= cl_image_tag fighter.photo, height: 110, width: 110, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="fighter-name">
+    <p><%= fighter.name %></p>
+  </div>
+</div>

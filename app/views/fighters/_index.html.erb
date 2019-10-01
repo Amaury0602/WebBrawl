@@ -5,14 +5,14 @@
   <div class="stats">
     <div class="stats-numbers">
      <p><%= image_tag "heart.PNG", class: "heart-icon" %>
-      <% if fighter.defense_equipment%>
-        <%= fighter.health%><span class="bonus">+<%=fighter.defense_equipment %></span></p>
+      <% if fighter.defense_equipment && !fighter.defense_equipment.zero?%>
+        <%= fighter.health%><span class="bonus-armor">+<%=fighter.defense_equipment %></span></p>
       <% else %>
         <%= fighter.health%></p>
       <% end %>
      <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-      <% if fighter.offense_equipment && fighter.offense_equipment > 0%>
-        <%= fighter.attack%><span class="bonus">+<%=fighter.offense_equipment %></span> </p>
+      <% if fighter.offense_equipment && !fighter.offense_equipment.zero?%>
+        <%= fighter.attack%><span class="bonus-att">+<%=fighter.offense_equipment %></span> </p>
       <% else %>
         <%= fighter.attack%></p>
       <% end %>

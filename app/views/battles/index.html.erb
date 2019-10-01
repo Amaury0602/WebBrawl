@@ -1,18 +1,23 @@
 <div class="container">
   <div class="all-battles">
+    <div class="won-lost">
+      <p>WON</p>
+      <p>...</p>
+      <p>LOST</p>
+    </div>
     <% @battles.each do |battle| %>
-      <div class="battle-recap">
-        <div class="infos">
-          <div class="competitors">
-            <%= battle.enemy_fighter.name %> VS <%= battle.your_fighter.name %>
+      <div class="index-battle">
+        <%= render "index", fighter: battle.winner %>
+        <div class="index-vs">
+          <div class="vs-sign">
+            <p>VS</p>
           </div>
-          <div class="date">
-            <%= battle.created_at.to_date %>
+          <div class="vs-infos">
+            <p><%= battle.remaining_health %></p>
+            <p><%= I18n.l(battle.created_at, format: :short) %> </p>
           </div>
         </div>
-        <div class="winner">
-          <p><strong>WINNER : <%= battle.winner.name %> with <%= battle.remaining_health %> health remaining</strong></p>
-        </div>
+        <%= render "index", fighter: battle.loser %>
       </div>
     <% end %>
   </div>

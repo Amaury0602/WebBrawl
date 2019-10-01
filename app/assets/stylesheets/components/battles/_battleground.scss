@@ -34,9 +34,6 @@
         .health-count {
           display: flex;
           justify-content: space-between;
-          .armor {
-            color: #2AB0EA;
-          }
         }
         .heart-icon{
           width: 40px;
@@ -54,6 +51,9 @@
           width: 30px;
           height: 30px;
           margin-bottom: 11px; // a change le plus tot  possible
+        }
+        .armor-count {
+          color: #2AB0EA;
         }
       }
     }
@@ -87,6 +87,12 @@
 
 .blocked {
   background-color: #2AB0EA;
+}
+
+.grow-red {
+  transition-duration: 0.7s;
+  font-size: 32px;
+  color:#CC0003;
 }
 
 
