@@ -19,7 +19,15 @@
     }
     .show-title {
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
+      .name-level {
+        display: flex;
+        justify-content: space-around;
+      }
+      .win-ratio {
+        text-align: center;
+      }
     }
     .show-photo {
       margin-left: auto;
@@ -30,9 +38,15 @@
       display: flex;
       justify-content: space-around;
       .base {
+        .show-bonus-armor {
+          color: #2AB0EA;
+        }
         .heart-icon {
           width: 30px;
           height: 30px;
+        }
+        .show-bonus-attack {
+          color: #CC0003;
         }
         .sword-icon {
           width: 30px;
@@ -57,6 +71,11 @@
     .presentation {
       font-size: 28px;
     }
+
+    .upgrade-gear-message {
+      color: #CC0003;
+    }
+
     .available {
       ul {
         list-style: none;

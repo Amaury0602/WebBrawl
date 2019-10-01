@@ -15,6 +15,11 @@
         </div>
       </div>
 
+
+      <div class="upgrade-gear-message">
+        <p>Stuff your character by changing his gear below</p>
+      </div>
+
       <%= simple_form_for @fighter, method: :patch, remote: true do |f| %>
         <%= f.input :name, input_html: { class: 'name-change' }, label: false%>
         <%= f.label :left_hand_id %>

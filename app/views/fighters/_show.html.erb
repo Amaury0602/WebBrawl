@@ -1,7 +1,12 @@
 <div class="show-fighter">
   <div class="show-title">
-    <p><%= fighter.name %></p>
-    <p><%= fighter.victories %> win(s) / <%= fighter.battle_count %> </p>
+    <div class="name-level">
+      <p><%= fighter.name %></p>
+      <p>Level : <%= fighter.exp %></p>
+    </div>
+    <div class="win-ratio">
+      <p><%= fighter.victories %> win(s) / <%= fighter.battle_count %> </p>
+    </div>
   </div>
   <div class="show-photo">
     <% if !fighter.photo.nil? %>
