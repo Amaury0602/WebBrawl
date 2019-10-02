@@ -1,22 +1,22 @@
 <div class="container">
-  <div class="result-card">
-    <div class="result-title">
-      <h1><%= @battle.winner.name %> won the fight !</h1>
+    <div class="result-battle-infos">
+      <div class="result-title">
+        <h1><%= @battle.winner.name %> won the fight !</h1>
+      </div>
+      <div class="fight-details">
+        <% if @battle.remaining_health > 7 %>
+          <h5><%= @battle.winner.name %> destroyed <%= @battle.loser.name %></h5>
+        <% elsif @battle.remaining_health < 3 %>
+          <h5>Close one... <%= @battle.winner.name %> only has <%= @battle.remaining_health%> health points left </h5>
+        <% else %>
+          <h5>He defeated <%= @battle.loser.name %> with <%= @battle.remaining_health %> health points remaining  </h5>
+        <% end %>
+      </div>
+      <div class="winner-details">
+        <h2><%= @battle.winner.name %> levels up and can equip new gears!! </h2>
+        <div class="winner-link">
+          <%= link_to "You can now give stuff to this fighter", fighter_path(@battle.winner)  %>
+        </div>
+      </div>
     </div>
-    <div class="fight-details">
-      <% if @battle.remaining_health > 7 %>
-        <h5><%= @battle.winner.name %> destroyed <%= @battle.loser.name %></h5>
-      <% elsif @battle.remaining_health < 3 %>
-        <h5>Close one... <%= @battle.winner.name %> only has <%= @battle.remaining_health%> health points left </h5>
-      <% else %>
-        <h5>He defeated <%= @battle.loser.name %> with <%= @battle.remaining_health %> health points remaining  </h5>
-      <% end %>
-    </div>
-    <div class="level-gained">
-      <h2><%= @battle.winner.name %> levels up and can equip new gears!! </h2>
-    </div>
-    <div class="links">
-      <%= link_to "You can now give stuff to this fighter", fighter_path(@battle.winner)  %>
-    </div>
-  </div>
 </div>

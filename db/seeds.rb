@@ -1,7 +1,6 @@
 require 'faker'
 
 
-
 Battle.destroy_all
 Fighter.destroy_all
 Equipment.destroy_all
@@ -16,15 +15,18 @@ great_shield = Equipment.create(mode: "armor", name: "Great shield", value: 3, l
 long_sword = Equipment.create(mode: "attack", name: "Long sword",  value: 3, level: 6)
 
 
-Fighter.create(name: "Aladdin", health: 8, attack: 3, left_hand: Equipment.first, right_hand: Equipment.first)
-Fighter.create(name: "Francis", health: 5, attack: 6, left_hand: Equipment.first, right_hand: Equipment.first)
+Fighter.create(name: "Nietzsche",
+  health: 8,
+  attack: 3,
+  left_hand: Equipment.first,
+  right_hand: Equipment.first,
+  photo: Rails.root.join("app/assets/images/nietzsche.PNG").open
+ )
 
-5.times do
-  Fighter.create(
-    name: Faker::Superhero.name.delete(" "),
-    health: 10,
-    attack: 1,
-    left_hand: Equipment.first,
-    right_hand: Equipment.first,
-    )
-end
+Fighter.create(name: "Colossus",
+  health: 5,
+  attack: 6,
+  left_hand: Equipment.first,
+  right_hand: Equipment.first,
+  photo: Rails.root.join("app/assets/images/colossus.PNG").open
+)

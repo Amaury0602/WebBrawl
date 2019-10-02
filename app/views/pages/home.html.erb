@@ -1,14 +1,28 @@
-<DIV class="container">
-  <h1>WELCOME TO WEBBRAWL</h1>
-
-  <ul>
-    <li>Tu peux faire s'affronter deux combattants</li>
-    <li>Les combattants commencent au niveau 0.0</li>
-    <li>Ils commencent sans arme sans défense</li>
-    <li>En gagnant des combats, ils débloquent des armes</li>
-    <li>Certains objets permettent de frapper plus fort</li>
-    <li>D'autres de bloquer les coups</li>
-  </ul>
-
-  <%= link_to "See fighters", fighters_path  %>
-</DIV>
+<div class="container">
+  <div class="homepage">
+    <div class="welcome-title">
+      <p>WELCOME TO WEBBRAWL</p>
+      <p class="subtitle">International random fights arena</p>
+    </div>
+    <div class="app-description">
+      <p>Join the arena and train your fighters OR those of other players. You start fighting bare handed but with each fight you gain levels and can carry new equipments ! Unlocked gear will help hitting harder and blocking attacks</p>
+    </div>
+  </div>
+</div>
+<div class="home-banner">
+  <div class="info-icons">
+    <div class="create-fighter">
+      <%= image_tag("custom-hero.PNG") %>
+      <p>Create fighters of your choice</p>
+    </div>
+    <div class="random-fights">
+      <%= image_tag("clash.PNG") %>
+      <p>Fight each other</p>
+    </div>
+    <div class="stuff-your-fighter">
+      <%= image_tag("shield-sword.PNG") %>
+      <p>Gear them as you like</p>
+    </div>
+  </div>
+  <%= link_to "See fighters", fighters_path, class: "fighters-link"  %>
+</div>
