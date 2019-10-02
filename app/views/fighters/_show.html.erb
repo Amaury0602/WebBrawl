@@ -22,10 +22,10 @@
        <% end %>
       </p>
       <p><%= image_tag "sword.PNG", class: "sword-icon" %>
-       <%= fighter.attack %></p>
+       <%= fighter.attack %>
        <% if fighter.offense_equipment && !fighter.offense_equipment.zero? %>
           <span class="show-bonus-attack">+ <%= fighter.offense_equipment %></span>
-       <% end %>
+       <% end %></p>
     </div>
     <div class="equipment">
       <p><%= fighter.left_hand.name %></p>

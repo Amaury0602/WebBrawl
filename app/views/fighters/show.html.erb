@@ -21,7 +21,6 @@
       </div>
 
       <%= simple_form_for @fighter, method: :patch, remote: true do |f| %>
-        <%= f.input :name, input_html: { class: 'name-change' }, label: false%>
         <%= f.label :left_hand_id %>
         <%= f.collection_select :left_hand_id, @equipments, :id, :name, {}, {class: 'equipment-selector'}%>
         <%= f.label :right_hand_id %>
