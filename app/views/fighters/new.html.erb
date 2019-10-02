@@ -1,10 +1,12 @@
 <div class="container">
-  <%= simple_form_for @fighter do |f| %>
-    <%= f.input :name %>
-    <%= f.input :health %>
-    <%= f.input :attack %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit, "Create character!!" %>
-  <% end %>
+  <div class="new-form">
+    <%= simple_form_for @fighter do |f| %>
+      <%= f.input :name %>
+      <%= f.input :health %>
+      <%= f.input :attack %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, "CREATE CHARACTER", class: "submit-fighter" %>
+    <% end %>
+  </div>
 </div>

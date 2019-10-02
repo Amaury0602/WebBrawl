@@ -1,0 +1,20 @@
+.new-form {
+  width: 50%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+  margin-bottom: auto;
+  display: block;
+
+  .submit-fighter {
+    border: 1px solid;
+    color: #B195D8;
+    font-size: 24px;
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #B195D8;
+      color: #0A0709;
+    }
+  }
+}

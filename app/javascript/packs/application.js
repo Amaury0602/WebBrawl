@@ -5,6 +5,8 @@ import { battleAttack } from '../plugins/battle_attack.js.erb';
 import { updateOnChange } from '../plugins/update_fighter_on_change.js.erb';
 
 selectFighters();
-battleAttack();
+
+setTimeout(battleAttack, 3000);
+
 updateOnChange();
 

@@ -31,7 +31,7 @@ class Fighter < ApplicationRecord
   end
 
   def min_health_and_attack
-    if attack.zero? || health.zero?
+    if attack && attack.zero? || health && health.zero?
       errors.add(:attack, "no pacifist here")
       errors.add(:health, "you need to live first (more than 0)")
     else
@@ -39,9 +39,8 @@ class Fighter < ApplicationRecord
     end
   end
 
-
   def capitalize_name
-    self.name.capitalize!
+    name.capitalize!
   end
 
   def battle_count
@@ -77,5 +76,3 @@ def add_hands
   self.left_hand = Equipment.first
   self.right_hand = Equipment.first
 end
-
-
